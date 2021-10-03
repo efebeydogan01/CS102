@@ -1,0 +1,231 @@
+*******************************************************
+*  CS102 - Templates - (2015/04/09)                   *
+*******************************************************
+
+// ************************************
+// **** simple GUI application     ****
+// ************************************
+
+import javax.swing.*;
+import java.awt.*;
+
+public class MyJFrame extends JFrame
+{
+    public MyJFrame( String title)
+    {
+        super( title);
+        setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
+        // setSize( 400, 350);
+        // setLocationRelativeTo(null);  // center on screen!
+
+        setLayout( new FlowLayout() );
+        
+        add( new MyJPanel() );
+                
+        pack();
+        setVisible(true);
+    }
+
+//    public static void main( String[] args)
+//    {
+//        new MyJFrame( "MyJFrame - v0.1");
+//    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater( new Runnable() {
+            public void run() {
+                new MyJFrame( "MyJFrame - v0.1");
+            }
+        });
+    }
+
+} // end class MyJFrame
+
+
+------
+
+import javax.swing.*;
+import java.awt.*;
+
+import java.awt.event.*;
+
+public class MyJPanel extends JPanel
+{
+    JButton b;
+    
+    public MyJPanel()
+    {
+        setPreferredSize( new Dimension( 400, 300) );
+        // setSize( 400, 300);  // needed if no layout manager!
+
+        setBackground( Color.GREEN);
+        setBorder( BorderFactory.createLineBorder( Color.BLUE) );
+        setLayout( new BorderLayout() );
+        
+        b = new JButton( "Welcome... ");
+        b.addActionListener( new MyActionListener() );
+        add( b, BorderLayout.SOUTH);
+
+        addMouseListener( new MyMouseListener() );
+    }
+    
+    public void paintComponent( Graphics g)
+    {
+        super.paintComponent( g);
+        
+        g.drawRect( 50, 50, 150, 100);
+    }
+    
+
+    class MyActionListener implements ActionListener
+    {
+        public void actionPerformed( ActionEvent e)
+        {
+            System.out.println( "Neat!");
+            JOptionPane.showMessageDialog( MyJPanel.this, "The message...", 
+                                           "The Title...", 
+                                           JOptionPane.INFORMATION_MESSAGE);
+        }        
+    } // end class MyActionlistener
+    
+    class MyMouseListener extends MouseAdapter
+    {
+        public void mousePressed( MouseEvent e)
+        {
+            System.out.println( "Mouse pressed at " + e.getX() + "," + e.getY() );
+        }        
+    } // end class MyMouseListener
+
+} // end class Q3JPanel
+
+
+// ************************************
+// **** simple class template!     ****
+// ************************************
+
+package YYYY;
+
+public class XXXX
+{
+    // properties
+    int PPPP;
+
+    // constructors
+    public XXXX( int PPPP)
+    {
+        this.PPPP = PPPP;  // ToDo
+    }
+
+    public XXXX()
+    {
+    }
+
+    // methods
+    public int getPPPP()
+    {
+        return PPPP;  // ToDo
+    }
+
+    public void setPPPP( int PPPP)
+    {
+        this.PPPP = PPPP;  // ToDo
+    }
+
+    public boolean equals( XXXX other)
+    {
+        return false;  // ToDo
+    }
+
+    public String toString()
+    {
+         return null;  // ToDo
+    }
+
+} // end class XXXX
+
+
+// ************************************
+// **** simple console application ****
+// ************************************
+
+import java.util.Scanner;
+
+/**
+ *  
+ * @author 
+ * @version 
+ */ 
+public class XXXX
+{
+    public static void main( String[] args)
+    {
+        Scanner scan = new Scanner( System.in);
+        
+        // constants
+        
+        // variables
+        
+        // program code
+        System.out.println( "Start...");
+
+        // todo...
+        
+        System.out.println( "End.");
+    }
+    
+}
+
+/**
+ *  
+ * @author 
+ * @version 
+ */ 
+public class XXXX
+{
+	// properties
+
+	// constructors
+
+	// methods
+}
+
+
+// ************************************
+// ****      simple applet         ****
+// ************************************
+
+import java.awt.Graphics;
+import java.applet.Applet;
+
+/**
+ * An Applet!
+ */
+public class XXXX extends Applet {
+    
+    public void paint( Graphics g)
+    {
+        g.drawString( "Hello...", 50, 50);
+        g.drawRect( 25, 25, 100, 50);
+    }
+    
+}
+
+// ************************************
+// ****    html page for applet    ****
+// ************************************
+
+<html>
+<head>
+    <title>My first Applet!</title>
+</head>
+<body>
+    <hr>
+    <p>A quotation brought to you by ....</p>
+    <applet code=XXXX.class width=200 height=150></applet>
+    <hr>
+    <a href="XXXX.java">The source.</a>
+</body>
+</html>
+
+*******************************************************
+*******************************************************

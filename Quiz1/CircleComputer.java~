@@ -1,0 +1,64 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class CircleComputer extends JFrame
+{
+   // properties
+   
+   // constructors
+   
+   public CircleComputer()
+   {
+      new JFrame( "Circle Computer");
+      pack();
+      setVisible( true);
+   }
+   
+   // methods
+   
+   
+   
+   public class MyPanel extends JPanel
+   {
+      // properties
+      JPanel radius;
+      JPanel circumference;
+      JPanel panel;
+      JTextField rad;
+      JTextField circ;
+      
+      // constructors
+      
+      public MyPanel()
+      {
+         radius = new MyPanel();
+         radius.add( new JLabel( "Radius:"));
+         rad = new JTextField();
+         radius.add( rad);
+         
+         circumference = new MyPanel();
+         circumference.add( new JLabel( "Circumference"));
+         circ = new JTextField();
+         circumference.add( circ);
+         
+         panel = new MyPanel();
+         panel.add( radius);
+         panel.add( circumference);
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   }
+   
+   
+}
+   

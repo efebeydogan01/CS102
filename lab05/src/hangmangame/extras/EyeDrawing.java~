@@ -1,0 +1,7 @@
+package hangmangame.extras;
+
+import java.awt.*;
+
+public class EyeDrawing extends JPanel
+{
+}

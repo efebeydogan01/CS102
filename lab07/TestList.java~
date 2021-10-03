@@ -1,0 +1,94 @@
+import junit.framework.TestCase;
+import cs102.ds.List;
+
+/** A JUnit test case class.
+  * Every method starting with the word "test" will be called when running
+  * the test with JUnit.
+  */
+public class TestList extends TestCase {
+   
+   /** A test method.
+     * (Replace "X" with a name describing the test.  You may write as
+     * many "testSomething" methods in this class as you wish, and each
+     * one will be called when running JUnit over this class.)
+     */
+   public void testPrint() {
+      System.out.println( "print test: ");
+      List list = createFrom( "davey");
+      list.print();
+   }
+   
+   public void testRemoveFromHead() {
+       System.out.println( "removeFromHead test: ");
+      List list = createFrom( "efk");
+      list.removeFromHead();
+      list.print();
+   }
+   
+   public void testPrintReverse() {
+      System.out.println( "printReverse test: ");
+      List list = createFrom( "cs102");
+      list.printReverse();
+   }
+   
+   public void testIsOrdered() {
+      System.out.println( "isOrdered test: ");
+      List list = createFrom( "ABCDE");
+      System.out.println( list.isOrdered());
+   }
+   
+   public void testMerge() {
+      System.out.println( "merge test: ");
+      List list;
+      List list2;
+      String[] x = { "asd", "emir", "eren", "efe", "A", "B", "C"};
+
+      list = createFrom( "ABCDEF");
+      list2 = createFrom( x);
+
+      list2 = List.merger( list, list2);
+
+      list2.print();
+   }
+   
+   public void testToString() {
+      System.out.println( "toString test: ");
+      List list;
+      
+      String[] x = { "asd", "emir", "eren", "efe", "A", "B", "C"};
+      list = createFrom( x);
+      System.out.println( list.toString());
+      
+   }
+   
+   public void testAddToTail() {
+      System.out.println( "addToTail test: ");
+      List list;
+      
+      list = createFrom( "ABCDEF");
+      list.addToTail( "G");
+      System.out.println( list);
+   }
+   
+   
+   public static List createFrom( String[] testData) {
+      List list;
+      list = new List();
+      for ( int i = 0; i < testData.length; i++) {
+         list.addToTail( testData[i]);
+      }
+      return list;
+   }
+   
+   public static List createFrom( String testData) {
+      List list;
+      list = new List();
+      for ( int i = 0; i < testData.length(); i++) {
+         list.addToTail( String.valueOf( testData.charAt( i)));
+      }
+      return list;
+   }
+   
+   public static void main( String[] args) {
+   }
+}

@@ -1,0 +1,19 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class MyDrawingPanel extends JPanel
+{
+   // properties
+
+   
+   // constructors
+   public MyDrawingPanel()
+   {
+      setSize( WIDTH, HEIGHT);
+      setBackground( Color.YELLOW);
+   }
+   
+   // methods
+   
+   
+}

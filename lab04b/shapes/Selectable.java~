@@ -1,0 +1,10 @@
+package shapes;
+
+public interface Selectable
+{
+   boolean getSelected();
+   
+   void setSelected( boolean b);
+   
+   boolean contains( int x, int y);
+}

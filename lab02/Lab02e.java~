@@ -1,0 +1,114 @@
+import java.util.*;
+import urlReader.*;
+
+/**
+ * A program that presents the user with a menu and lets them view poems without HTML code
+ * @author Efe Beydoðan
+ * @version 01.03.2020
+ */
+public class Lab02e
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+      // constants
+      
+      // variables
+      int option;
+      int poem;
+      ArrayList<MySimpleURLReader> collection;
+      String url;
+      MySimpleURLReader simple;
+      HTMLFilteredReader html;
+      
+      
+      // program code
+      
+      collection = new ArrayList<MySimpleURLReader>();
+      
+      do
+      {
+         System.out.println( "=========================================================");
+         System.out.println( "Press 1 to enter the url of the poem to add to collection");
+         System.out.println( "Press 2 to list all poems in the collection");
+         System.out.println( "Press 3 to quit");
+         System.out.println( "=========================================================");
+         
+         System.out.println( "Make a selection: ");
+         option = scan.nextInt();
+         
+         if ( option == 1)
+         {
+            // Ask for and get the URL from the user
+            System.out.println( "Enter the URL: ");
+            url = scan.next();
+            
+            // Check all the characters in the URL starting from the end
+            for ( int i = url.length() - 1; i > 0; i--)
+            {
+               // If there is a '.' character followed by a 't' character in the URL, then it must be a txt file and therefore stored as a MySimpleURLReader
+               if ( url.charAt(i) == 't' && url.charAt(i-1) == '.')
+               {
+                  simple = new MySimpleURLReader( url);
+                  collection.add( simple);
+                  // Stop the for loop after adding the poem to the collection
+                  i = -1;
+               }
+               // Else if there is a '.' character followed by a 'h' character in the URL, then it must be an html file and stores as a HTMLFilteredReader so the HTML code can be filtered out
+               else if ( url.charAt(i) == 'h' && url.charAt( i - 1) == '.')
+               {
+                  html = new HTMLFilteredReader( url);
+                  collection.add( html);
+                  // Stop the fr loop after adding the poem to the collection
+                  i = -1;
+               }
+            }
+         }
+         
+         else if  ( option == 2)
+         {
+            // If there are no poems in the collection then show a warning to the user
+            if ( collection.size() == 0)
+            {
+               System.out.println( "There are no poems in the collection!");
+            }
+            else
+            {
+               do
+               {
+                  // Print all the poems' indexes and names
+                  for ( int i = 0; i < collection.size(); i++)
+                  {
+                     System.out.println( "Index no: " + i + " Name: " + collection.get( i).getName());
+                  }
+                  // Ask for and get an index number from the user
+                  System.out.println( "Please select a poem by entering the index number or enter \"last index + 1\" to exit: ");
+                  poem = scan.nextInt();
+                  
+                  // If the entered index isn't equal to the final index + 1 and it's a valid index, show the poem
+                  if ( poem != collection.size() && poem < collection.size())
+                  {
+                     System.out.println( "The selected poem: \n");
+                     System.out.println( collection.get( poem).getPageContents());
+                  }
+                  // If the entered index exceeds collection.size() then give a warning
+                  else if ( poem > collection.size())
+                  {
+                     System.out.println( "Enter a valid index to view a poem or enter last index + 1 to exit!");
+                  }
+                  
+               } while ( poem != collection.size()); // Exit the loop when user enters collection.size()
+            }
+         }
+         
+         // If user doesn't select 1,2 or 3 give a warning
+         else if ( option != 3)
+         {
+            System.out.println( "Invalid selection!");
+         }
+      
+      } while ( option != 3); // Exit when the user enters 3
+      
+      System.out.println( "You quit");
+   }
+}

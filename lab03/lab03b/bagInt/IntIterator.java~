@@ -1,0 +1,6 @@
+package bagInt;
+
+public interface IntIterator
+{
+   int next();
+}

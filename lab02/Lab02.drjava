@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20190813-220051">
+  <project autorefresh="false" build="classes/" main="Lab02e" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="Lab02e.java" package="" timestamp="04-Mar-2020 09:21:34">
+        <select from="1312" to="1312"/>
+        <scroll column="377" row="0"/>
+      </file>
+      <file name="urlReader/HTMLFilteredReader.java" package="urlReader" timestamp="04-Mar-2020 09:31:08">
+        <select from="1312" to="1312"/>
+        <scroll column="377" row="0"/>
+      </file>
+      <file name="urlReader/MySimpleURLReader.java" package="urlReader" timestamp="04-Mar-2020 10:46:22">
+        <select from="1312" to="1312"/>
+        <scroll column="377" row="0"/>
+      </file>
+      <file name="Lab02a.java" package="" timestamp="04-Mar-2020 10:59:36">
+        <select from="1312" to="1312"/>
+        <scroll column="377" row="0"/>
+      </file>
+      <file name="urlReader/XHTMLFilteredReader.java" package="urlReader" timestamp="04-Mar-2020 11:04:32">
+        <select from="1312" to="1312"/>
+        <scroll column="377" row="0"/>
+      </file>
+      <file name="CurrencyCalculator.java" package="" timestamp="06-Mar-2020 23:44:27">
+        <select from="1312" to="1312"/>
+        <scroll column="377" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath>
+      <file absolute="false" name="../cs1.jar"/>
+    </classpath>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
